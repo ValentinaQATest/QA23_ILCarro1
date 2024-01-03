@@ -29,12 +29,21 @@ public class HelperUser extends HelperBase{
         //passwordInput.sendKeys(password);
         type(By.xpath("//input[@id='password']"),password);
 
-
     }
 
     public void submitLogin(){
         click(By.xpath("//button[text()='Y’alla!']"));
-        click(By.xpath("//button[text()='Ok']"));
+        click(By.xpath("//*[text()='Ok']"));
+
     }
 
+    public boolean isLogged() {
+        return isElementPresent(By.xpath("//*[text()='Logout']"));
+
+    }
+
+
+    public void logout() {
+        click(By.xpath("//*[text()='Logout']"));
+    }
 }
